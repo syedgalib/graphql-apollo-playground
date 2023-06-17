@@ -1,1 +1,1 @@
-# graphql-apollo-playground
+# Graphql Apollo Playground
