@@ -3,4 +3,8 @@ export const Product = {
     const { categoryID } = parent;
     return db.categories.find((category) => category.id === categoryID);
   },
+  reviews: ( parent, args, { db } ) => {
+    const { id } = parent;
+    return db.reviews.filter((review) => review.productID === id);
+  },
 };

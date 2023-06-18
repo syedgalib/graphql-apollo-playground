@@ -18,7 +18,19 @@ export const categories = [
     }
 ];
 
+export const reviews = [
+    {
+        id: 'a41fc6ab-e3f8-4b9a-a11e-766103c38576',
+        date: '2023-01-01',
+        title: 'Nice',
+        comment: 'This is a nice pen',
+        rating: 5,
+        productID: 'a41fc6ab-e3f8-4b9a-a11e-766103c38576',
+    }
+];
+
 export const db = {
     products,
     categories,
+    reviews,
 }

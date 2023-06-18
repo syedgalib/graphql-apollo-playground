@@ -9,6 +9,7 @@ export const typeDefs = `#graphql
         onSale: Boolean!
         categoryID: String
         category: Category
+        reviews: [ Review! ]
     }
 
     type Category {
@@ -17,10 +18,22 @@ export const typeDefs = `#graphql
         products: [ Product! ]
     }
 
+    type Review {
+        id: ID!
+        date: String!
+        title: String!
+        comment: String!
+        rating: Int!
+        productID: ID!
+        product: Product!
+    }
+
     type Query {
-        product( id: ID! ): Product,
-        products: [ Product! ]!,
-        category( id: ID! ): Category,
-        categories: [ Category! ]!,
+        product( id: ID! ): Product
+        products: [ Product! ]!
+        category( id: ID! ): Category
+        categories: [ Category! ]!
+        review( id: ID! ): Review
+        reviews: [ Review! ]!
     } 
 `;
