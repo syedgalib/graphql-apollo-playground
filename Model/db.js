@@ -9,6 +9,16 @@ export const products = [
         onSale: false,
         categoryID: 'a41fc6ab-e3f8-4b9a-a11e-766103c38576',
     },
+    {
+        id: 'a41fc6ab-e3f8-4b9a-a11e-766103c38577',
+        name: 'Sharpener',
+        description: 'You can use this sharpener to sharpe any pencil.',
+        image: null,
+        quantity: 10,
+        price: 2,
+        onSale: true,
+        categoryID: 'a41fc6ab-e3f8-4b9a-a11e-766103c38576',
+    },
 ];
 
 export const categories = [

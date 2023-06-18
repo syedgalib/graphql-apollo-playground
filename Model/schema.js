@@ -30,10 +30,14 @@ export const typeDefs = `#graphql
 
     type Query {
         product( id: ID! ): Product
-        products: [ Product! ]!
+        products( filter: ProductFilterInput ): [ Product! ]!
         category( id: ID! ): Category
         categories: [ Category! ]!
         review( id: ID! ): Review
         reviews: [ Review! ]!
-    } 
+    }
+
+    input ProductFilterInput {
+        onSale: Boolean
+    }
 `;
