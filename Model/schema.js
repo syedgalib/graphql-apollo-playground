@@ -25,7 +25,7 @@ export const typeDefs = `#graphql
         comment: String!
         rating: Int!
         productID: ID!
-        product: Product!
+        product: Product
     }
 
     type Query {
@@ -35,6 +35,65 @@ export const typeDefs = `#graphql
         categories: [ Category! ]!
         review( id: ID! ): Review
         reviews: [ Review! ]!
+    }
+
+    type Mutation {
+        addProduct( input: AddProductInput! ): Product
+        updateProduct( input: UpdateProductInput! ): Product
+        deleteProduct( id: ID! ): Boolean
+        
+        addCategory( input: AddCategoryInput! ): Category
+        updateCategory( input: UpdateCategoryInput! ): Category
+        deleteCategory( id: ID! ): Boolean
+        
+        addReview( input: AddReviewInput! ): Review
+        updateReview( input: UpdateReviewInput! ): Review
+        deleteReview( id: ID! ): Boolean
+    }
+
+    input AddProductInput {
+        name: String!
+        description: String!
+        image: String
+        quantity: Int!
+        price: Float!
+        onSale: Boolean!
+        categoryID: String
+    }
+
+    input UpdateProductInput {
+        id: ID!
+        name: String
+        description: String
+        image: String
+        quantity: Int
+        price: Float
+        onSale: Boolean
+        categoryID: String
+    }
+
+    input AddCategoryInput {
+        name: String!
+    }
+
+    input UpdateCategoryInput {
+        id: ID!
+        name: String!
+    }
+
+    input AddReviewInput {
+        title: String!
+        comment: String!
+        rating: Int!
+        productID: ID!
+    }
+
+    input UpdateReviewInput {
+        id: ID!
+        title: String
+        comment: String
+        rating: Int
+        productID: ID
     }
 
     input ProductFilterInput {
